@@ -1,4 +1,4 @@
-" vim-testrunner - Closes even the last tabpage
+" vim-testrunner - Run tests/specs of Ruby on Rails projects
 " Maintainer:   Szymon Wrozynski
 " Version:      0.0.1
 "
@@ -55,10 +55,10 @@ fun! s:run_tests(file_name, bang)
 
     let dispatch_command = ':Dispatch '
 
-    if (match(a:file_name, '^spec/.*_spec.rb$') == 0) && !bang
+    if (match(a:file_name, '^spec/.*_spec\.rb$') == 0) && !a:bang
         let dispatch_command .= 'rspec %'
-    elseif (match(a:file_name, '^test/.*.rb^') == 0) && !bang
-        let dispatch_command .= 'ruby %'
+    elseif (match(a:file_name, '^test/.*_test\.rb$') == 0) && !a:bang
+        let dispatch_command .= 'rake test:single %'
     elseif isdirectory('spec')
         let dispatch_command .= 'rspec'
     elseif isdirectory('test')

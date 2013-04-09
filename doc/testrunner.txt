@@ -8,7 +8,7 @@
 
                         Vim-TestRunner version 0.0.1~
 
-                        Runs Ruby/RoR tests or specs.
+                  Run tests/specs of Ruby on Rails projects.
 
 
 

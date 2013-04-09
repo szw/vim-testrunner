@@ -1,8 +1,7 @@
 vim-testrunner
 ==============
 
-Runs Ruby/RoR tests or specs.
-
+Run tests/specs of Ruby on Rails projects.
 
 Installation
 ------------
