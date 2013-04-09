@@ -35,7 +35,7 @@ if !exists('g:testrunner_default_mapping_key')
     let g:testrunner_default_mapping_key = '<F9>'
 endif
 
-command! -bang -nargs=0 RunTests :call s:run_test(expand('%'), <bang>0)
+command! -bang -nargs=0 RunTests :call s:run_tests(expand('%'), <bang>0)
 
 if g:testrunner_set_default_mapping
     let command = ':RunTests'
