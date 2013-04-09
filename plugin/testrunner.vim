@@ -58,7 +58,7 @@ fun! s:run_tests(file_name, bang)
     if (match(a:file_name, '^spec/.*_spec\.rb$') == 0) && !a:bang
         let dispatch_command .= 'rspec %'
     elseif (match(a:file_name, '^test/.*_test\.rb$') == 0) && !a:bang
-        let dispatch_command .= 'rake test:single %'
+        let dispatch_command .= 'rake test TEST=%'
     elseif isdirectory('spec')
         let dispatch_command .= 'rspec'
     elseif isdirectory('test')
