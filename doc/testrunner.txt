@@ -1,0 +1,92 @@
+*testrunner.txt*           For Vim version 7.3          Last change: 2013-04-09
+*TestRunner*
+
+
+
+
+
+
+                        Vim-TestRunner version 0.0.1~
+
+                        Runs Ruby/RoR tests or specs.
+
+
+
+
+
+
+Copyright (c) 2013 Szymon Wrozynski
+
+============================================================================
+Table of Contents
+
+    1. About................................................|testrunner-about|
+    2. Usage................................................|testrunner-usage|
+    3. Configuration................................|testrunner-configuration|
+    4. Author and License..........................|testrunner-author-license|
+
+----------------------------------------------------------------------------
+1. About                                                    *testrunner-about*
+
+TestRunner is a plugin for easy running Ruby/Rails test/specs. It requires
+Vim-Dispatch plugin by Tim Pope (https://github.com/tpope/vim-dispatch).
+It is very useful with its default mapping to <F9> key.
+
+----------------------------------------------------------------------------
+2. Usage                                                    *testrunner-usage*
+
+TestRunner has only one command: >
+
+    :RunTests
+<
+
+If the file in active window is a test or spec, only that file will considered
+to execution. However this can be altered with the bang. The banged version
+will force to run all tests despite of the current file: >
+
+    :RunTests!
+
+<
+
+----------------------------------------------------------------------------
+3. Configuration                                    *testrunner-configuration*
+
+Here are some plugin options:
+
+
+                                            *'testrunner_set_default_mapping'*
+Default: 1
+
+Whether TestRunner should set default mappings or not: >
+
+    let g:testrunner_set_default_mapping = 1
+
+<
+
+                                          *'testrunner_set_mapping_with_bang'*
+Default: 0
+
+Whether TestRunner should set default mappings with banged version or not: >
+
+    let g:testrunner_set_mapping_with_bang = 0
+
+<
+
+                                            *'testrunner_default_mapping_key'*
+Default: '<F9>'
+
+The default mappings key: >
+
+    let g:testrunner_default_mapping_key = '<F9>'
+
+<
+
+----------------------------------------------------------------------------
+4. Author and License                              *testrunner-author-license*
+
+TestRunner was written by Szymon Wrozynski and Contributors
+(https://github.com/szw/vim-testrunner/commits/master). It is licensed
+under the same terms as Vim itself. For more info see |license|.
+
+vim:tw=78:ts=8:ft=help:norl:
+
