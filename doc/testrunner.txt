@@ -81,6 +81,14 @@ The default mappings key: >
 
 <
 
+                                                       *'testrunner_autosave'*
+Default: 1
+
+Whether TestRunner should save all files automatically before running tests: >
+
+    let g:testrunner_autosave = 1
+
+<
 ----------------------------------------------------------------------------
 4. Author and License                              *testrunner-author-license*
 

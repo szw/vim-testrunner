@@ -62,6 +62,13 @@ Here are some plugin options:
         let g:testrunner_default_mapping_key = '<F9>'
 
 
+* `testrunner_autosave`
+
+    Whether TestRunner should save all files automatically before running tests:
+
+        let g:testrunner_autosave = 1
+
+
 Author and License
 ------------------
 

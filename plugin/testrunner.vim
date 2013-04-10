@@ -35,6 +35,10 @@ if !exists('g:testrunner_default_mapping_key')
     let g:testrunner_default_mapping_key = '<F9>'
 endif
 
+if !exists('g:testrunner_autosave')
+    let g:testrunner_autosave = 1
+endif
+
 command! -bang -nargs=0 RunTests :call s:run_tests(expand('%'), <bang>0)
 
 if g:testrunner_set_default_mapping
@@ -45,6 +49,8 @@ if g:testrunner_set_default_mapping
     endif
 
     silent! exe 'nnoremap <silent>' . g:testrunner_default_mapping_key command . '<CR>'
+    silent! exe 'vnoremap <silent>' . g:testrunner_default_mapping_key . ' <C-[>' . command . '<CR>gv'
+    silent! exe 'inoremap <silent>' . g:testrunner_default_mapping_key . ' <C-o>' . command . '<CR>'
 endif
 
 fun! s:run_tests(file_name, bang)
@@ -53,7 +59,7 @@ fun! s:run_tests(file_name, bang)
         return
     endif
 
-    let dispatch_command = ':Dispatch '
+    let dispatch_command = 'Dispatch '
 
     if (match(a:file_name, '^spec/.*_spec\.rb$') == 0) && !a:bang
         let dispatch_command .= 'rspec %'
@@ -66,6 +72,10 @@ fun! s:run_tests(file_name, bang)
     else
         echo 'Cannot run ruby tests: "spec" or "test" directories not found'
         return
+    endif
+
+    if g:testrunner_autosave
+        silent! exe 'wa'
     endif
 
     silent! exe dispatch_command
