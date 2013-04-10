@@ -61,16 +61,21 @@ fun! s:run_tests(file_name, bang)
 
     let dispatch_command = 'Dispatch '
 
-    if (match(a:file_name, '^spec/.*_spec\.rb$') == 0) && !a:bang
-        let dispatch_command .= 'rspec %'
-    elseif (match(a:file_name, '^test/.*_test\.rb$') == 0) && !a:bang
-        let dispatch_command .= 'rake test TEST=%'
-    elseif isdirectory('spec')
-        let dispatch_command .= 'rspec'
-    elseif isdirectory('test')
-        let dispatch_command .= 'rake test'
+    if index(['ruby', 'eruby', 'haml'], &ft) >= 0
+        if (match(a:file_name, '^spec/.*_spec\.rb$') == 0) && !a:bang
+            let dispatch_command .= 'rspec %'
+        elseif (match(a:file_name, '^test/.*_test\.rb$') == 0) && !a:bang
+            let dispatch_command .= 'rake test TEST=%'
+        elseif isdirectory('spec')
+            let dispatch_command .= 'rspec'
+        elseif isdirectory('test')
+            let dispatch_command .= 'rake test'
+        else
+            echo 'Cannot run ruby tests: "spec" or "test" directories not found'
+            return
+        endif
     else
-        echo 'Cannot run ruby tests: "spec" or "test" directories not found'
+        echo 'Cannot recognize tests/specs for the current file type'
         return
     endif
 
