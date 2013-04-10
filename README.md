@@ -16,8 +16,9 @@ About
 -----
 
 TestRunner is a plugin for easy running Ruby/Rails test/specs. It requires
-[Vim-Dispatch](https://github.com/tpope/vim-dispatch) plugin by Tim Pope.  It is very useful with
-its default mapping to `<F9>` key.
+[`Vim-Dispatch`](https://github.com/tpope/vim-dispatch) plugin by Tim Pope. It's very useful with
+its default mapping to `<F9>` key. By default, it doesn't require you to save or even to escape the
+insert mode prior to run tests/specs.
 
 
 Usage

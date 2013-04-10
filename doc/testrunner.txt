@@ -29,8 +29,10 @@ Table of Contents
 1. About                                                    *testrunner-about*
 
 TestRunner is a plugin for easy running Ruby/Rails test/specs. It requires
-Vim-Dispatch plugin by Tim Pope (https://github.com/tpope/vim-dispatch).
-It is very useful with its default mapping to <F9> key.
+Vim-Dispatch plugin by Tim Pope (https://github.com/tpope/vim-dispatch). It's
+very useful with its default mapping to <F9> key. By default, it doesn't
+require you to save or even to escape the insert mode prior to run
+tests/specs.
 
 ----------------------------------------------------------------------------
 2. Usage                                                    *testrunner-usage*
