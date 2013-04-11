@@ -75,7 +75,7 @@ fun! s:run_tests(file_name, bang)
             return
         endif
     else
-        echo 'Cannot recognize tests/specs for the current file type'
+        echo 'No test method for the current file type'
         return
     endif
 
